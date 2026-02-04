@@ -207,7 +207,11 @@ marimo/_lsp/
 __marimo__/
 
 # Project data (local only)
-/data/
+# Ignore dataset contents by default, but keep model artifacts tracked.
+/data/**
+!/data/**/
+!/data/**/*.pt
+!/data/**/*.pkl
 
 # macOS
 .DS_Store
@@ -216,3 +220,7 @@ __marimo__/
 # R project settings
 .Rhistory
 *.Rproj
+
+# Track model artifacts (override any earlier ignore patterns)
+!*.pt
+!*.pkl
